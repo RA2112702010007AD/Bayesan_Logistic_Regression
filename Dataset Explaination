@@ -1,0 +1,17 @@
+
+- X is the input dataset with 4 examples of 2 features each
+- y is the target/label for each example
+
+- prior_mu and prior_sigma define the prior distribution over the weights w, which is assumed to be a multivariate normal with mean prior_mu (all zeros) and covariance prior_sigma (identity matrix)
+
+- logistic() defines the logistic sigmoid function used in logistic regression
+
+- likelihood() calculates the likelihood of the data given weights w. It computes the predictions using X and w, calculates the log likelihood, and sums over all examples
+
+- To sample from the posterior, we iteratively draw N=1000 samples from the prior distribution. Each sample is a 2D weight vector.
+
+- The samples are plotted as blue points, with w1 on the x-axis and w2 on the y-axis.
+
+- This visualizes the learned posterior distribution over the weights after seeing the data. Points cluster in high likelihood regions as defined by the data and prior.
+
+So in summary, it implements Bayesian logistic regression by defining a prior, calculating the likelihood, and sampling from the posterior to visualize the learned weight distributions after accounting for both prior and data.
